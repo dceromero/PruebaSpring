@@ -1,0 +1,34 @@
+<form (ngSubmit)="dataSent(form)" #form="ngForm" >
+<div class="row m-2">
+    
+    <div class="col-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" >Nombres</label>
+            </div>
+        <input [(ngModel)]="persona.nombres" type="text" class="form-control" name="nombres" required />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" >Apellidos</label>
+            </div>
+            <input [(ngModel)]="persona.apellidos" type="text" class="form-control" name="apellidos" required />
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" >Mail</label>
+            </div>
+            <input [(ngModel)]="persona.mail" type="text" class="form-control" name="mail" required />
+        </div>
+    </div>
+    <div class="col-6">
+        <button type="submit" class="btn btn-block btn-outline-primary"><strong>Guardar</strong></button>
+    </div>
+
+</div>
+
+</form>

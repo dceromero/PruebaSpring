@@ -1,0 +1,26 @@
+<div class="col-12">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Creación</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of listapersons | async">
+                <th scope="col">{{person.createat}}</th>
+                <th scope="col">{{person.nombres}}</th>
+                <th scope="col">{{person.apellidos}}</th>
+                <th scope="col">{{person.mail}}</th>
+                <th scope="col">
+                    <button class="btn btn-outline-info" (click)="buscarId(1)">Buscar</button>
+                    <button class="btn btn-outline-danger"  (click)="Persona(person, 'Desea Eliminar este Registro?', 0)" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
+                </th>
+              </tr>
+        </tbody>
+    </table>
+    <app-modal (newLista)="Eliminar( $event )" [operacion]="accion" [titulo]="tituloModal" [registro]="persona"></app-modal>
+</div>
