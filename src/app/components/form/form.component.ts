@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Persons } from '../../interfaces/persons';
 import { NgForm } from '@angular/forms';
 
@@ -9,11 +9,12 @@ import { NgForm } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
+
   constructor() {
       this.enviarDatos = new EventEmitter();
   }
   @Output() enviarDatos: EventEmitter<object  >;
-  persona: Persons = {
+  @Input() persona: Persons = {
     id : 0,
     nombres : '',
     apellidos : '',
